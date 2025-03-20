@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* nave Blue color */
+@layer base {
+  :root  {
+    --background: 240 0% 100%;
+    --foreground: 240 0% 10%;
+    --card: 240 0% 100%;
+    --card-foreground: 240 0% 15%;
+    --popover: 240 0% 100%;
+    --popover-foreground: 240 95% 10%;
+    --primary: 240 100% 25.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 202 10% 95%;
+    --muted-foreground: 240 0% 40%;
+    --accent: 202 10% 90%;
+    --accent-foreground: 240 0% 15%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 240 0% 100%;
+    --border: 240 20% 82%;
+    --input: 240 20% 50%;
+    --ring: 240 100% 25.1%;
+    --radius: 0rem;
+  }
+  .dark  {
+    --background: 240 10% 10%;
+    --foreground: 240 0% 100%;
+    --card: 240 0% 10%;
+    --card-foreground: 240 0% 100%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 240 0% 100%;
+    --primary: 240 100% 25.1%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 202 10% 25%;
+    --muted-foreground: 240 0% 65%;
+    --accent: 202 10% 25%;
+    --accent-foreground: 240 0% 95%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 240 0% 100%;
+    --border: 240 20% 50%;
+    --input: 240 20% 50%;
+    --ring: 240 100% 25.1%;
+    --radius: 0rem;
+  }
+  } 
+  
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/************************ 21.Background effect css ***************************/
+.area {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.circles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.circles li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 20px;
+	height: 20px;
+	/* background: rgb(255 22 22 / 10%); */
+	/* background: rgb(255 22 22 / 10%); */
+	animation: animate 25s linear infinite;
+	bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+	left: 25%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+	left: 10%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 2s;
+	animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+	left: 70%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+	left: 40%;
+	width: 60px;
+	height: 60px;
+	animation-delay: 0s;
+	animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+	left: 65%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+	left: 75%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+	left: 35%;
+	width: 120px;
+	height: 120px;
+	animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+	left: 50%;
+	width: 25px;
+	height: 25px;
+	animation-delay: 15s;
+	animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+	left: 20%;
+	width: 15px;
+	height: 15px;
+	animation-delay: 2s;
+	animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+	left: 85%;
+	width: 120px;
+	height: 120px;
+	animation-delay: 0s;
+	animation-duration: 11s;
+}
+
+@keyframes animate {
+
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+		border-radius: 0;
+	}
+
+	100% {
+		transform: translateY(-1000px) rotate(720deg);
+		opacity: 0;
+		border-radius: 50%;
+	}
+}
+
+/* 
+@layer utilities {
+  .animate-float {
+    animation: float 25s linear infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 35s linear infinite;
+  }
+
+  .animate-float-slower {
+    animation: float 45s linear infinite;
+  }
+
+  .animate-float-medium {
+    animation: float 18s linear infinite;
+  }
+
+  .animate-float-fast {
+    animation: float 12s linear infinite;
+  }
+
+  .animate-float-faster {
+    animation: float 11s linear infinite;
+  }
+
+  .delay-0 {
+    animation-delay: 0s;
+  }
+
+  .delay-2 {
+    animation-delay: 2s;
+  }
+
+  .delay-3 {
+    animation-delay: 3s;
+  }
+
+  .delay-4 {
+    animation-delay: 4s;
+  }
+
+  .delay-7 {
+    animation-delay: 7s;
+  }
+
+  .delay-15 {
+    animation-delay: 15s;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+ */
